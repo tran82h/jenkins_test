@@ -9,7 +9,7 @@ pipeline {
     //         sh 'go version'
     //     }
     tools {
-        go 'go1.15.5'
+        go 'go1.15'
     }
     environment {
         GO114MODULE = 'on'

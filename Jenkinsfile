@@ -1,9 +1,9 @@
 pipeline {
-    agent [
+    agent {
         node {
             label 'linux'
         }
-    ]
+    }
     stages {
         stage ('Run tests') {
           steps{

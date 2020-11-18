@@ -26,8 +26,8 @@ pipeline {
               //       [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] || (${installGo})
               //   """
               script{
-                sh('cd ./test/')
-                sh('go test ./...')
+                sh 'cd ./test/'
+                sh 'go test ./...'
                 }
               }
           }

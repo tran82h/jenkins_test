@@ -1,3 +1,4 @@
+def installGo = "curl -SLO https://storage.googleapis.com/golang/go1.9.3.linux-amd64.tar.gz && tar -C \$HOME -xf go1.9.3.linux-amd64.tar.gz && rm -rf go1.9.3.linux-amd64.tar.gz"
 pipeline {
     agent any
     // node {

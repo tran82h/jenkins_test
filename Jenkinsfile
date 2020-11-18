@@ -8,18 +8,19 @@ pipeline {
         withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
             sh 'go version'
         }
-    }
-    // environment {
-    //     GO111MODULE = 'on'
-    // }
-    stages {
-        stage ('Run tests') {
-          steps{
-            script{
-            sh('cd ./test/')
-            sh('go test ./...')
+        stages {
+          stage ('Run tests') {
+            steps{
+              script{
+              sh('cd ./test/')
+              sh('go test ./...')
+              }
             }
           }
         }
-    }
+      }
+    // environment {
+    //     GO111MODULE = 'on'
+    // }
+
 }

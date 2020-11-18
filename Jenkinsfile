@@ -20,7 +20,7 @@ pipeline {
         stage ('Run tests') {
             steps{
               sh script: """
-                  [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] )
+                  [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] 
               """
               script{
               sh('cd ./test/')

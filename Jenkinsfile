@@ -31,7 +31,7 @@ pipeline {
               }
             }
         }
-    }
+    // }
       // }
     // environment {
     //     GO111MODULE = 'on'

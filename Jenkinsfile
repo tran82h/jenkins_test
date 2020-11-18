@@ -9,8 +9,6 @@ pipeline {
             sh 'go version'
         }
     }
-
-    }
     // environment {
     //     GO111MODULE = 'on'
     // }

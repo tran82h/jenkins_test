@@ -1,5 +1,9 @@
 pipeline {
-    agent { docker { image 'golang' } }
+    agent [
+      node {
+        label 'linux'
+      }
+    ]
     stages {
         stage ('Run tests') {
           steps{

@@ -21,7 +21,7 @@ pipeline {
     // }
       stages {
           stage ('Run tests') {
-              // steps{
+              steps{
               //   sh script: """
               //       [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] || (${installGo})
               //   """
@@ -31,7 +31,7 @@ pipeline {
                 }
               }
           }
-    // }
+    }
       // }
     // environment {
     //     GO111MODULE = 'on'

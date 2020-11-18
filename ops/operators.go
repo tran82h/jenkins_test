@@ -1,4 +1,4 @@
-package main
+package ops
 
 type Operators interface {
 	Generate(int, int) string

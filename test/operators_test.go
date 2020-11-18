@@ -2,6 +2,8 @@ package test
 
 import (
 	"testing"
+
+	"github.com/jenkin-tests/ops"
 )
 
 func Test_keyOp_Generate(t *testing.T) {
@@ -34,7 +36,7 @@ func Test_keyOp_Generate(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			kp := GetKeyOperator()
+			kp := ops.GetKeyOperator()
 			if got := kp.Generate(tt.args.x, tt.args.y); got != tt.want {
 				t.Errorf("keyOp.Generate() = %v, want %v", got, tt.want)
 			}

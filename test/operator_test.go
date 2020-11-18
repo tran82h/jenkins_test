@@ -1,7 +1,9 @@
-package tests
+package test
 
 import (
 	"testing"
+
+	"github.com/jenkin-tests/ops"
 )
 
 func Test_keyOp_Degenerate(t *testing.T) {
@@ -34,7 +36,7 @@ func Test_keyOp_Degenerate(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			kp := GetKeyOperator()
+			kp := ops.GetKeyOperator()
 			gotX, gotY, gotErr := kp.Degenerate(tt.args.s)
 			if (gotErr != nil) != tt.wantErr {
 				t.Errorf("keyOp.Degenerate() error = %v, wantErr %v", gotErr, tt.wantErr)

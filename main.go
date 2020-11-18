@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/jenkin-tests/ops"
 )
 
 func main() {
 
-	op := GetKeyOperator()
+	op := ops.GetKeyOperator()
 
 	key := op.Generate(2, 3)
 

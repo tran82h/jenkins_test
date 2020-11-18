@@ -28,7 +28,7 @@
 
 node {
             // Install the desired Go version
-    def root = tool name: 'Go 1.7.1', type: 'go'
+    def root = tool name: 'Go1.2', type: 'go'
 
       // Export environment variables pointing to the directory where Go was installed
       withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {

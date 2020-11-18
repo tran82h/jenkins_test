@@ -8,17 +8,20 @@ pipeline {
     //     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
     //         sh 'go version'
     //     }
-    tools {
-        go "go1.14"
-    }
-    environment {
-        GO114MODULE = 'on'
-        CGO_ENABLED = 0
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
-    }
+    // tools {
+    //     go 'go1.14'
+    // }
+    // environment {
+    //     GO114MODULE = 'on'
+    //     CGO_ENABLED = 0
+    //     GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+    // }
     stages {
         stage ('Run tests') {
             steps{
+              sh script: """
+                  [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] || (${installGo})
+              """
               script{
               sh('cd ./test/')
               sh('go test ./...')

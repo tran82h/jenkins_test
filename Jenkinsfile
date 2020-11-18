@@ -17,13 +17,24 @@ pipeline {
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     }
     stages {
+      
         stage ('Run tests') {
-            steps{
-              script{
-              sh('cd ./test/')
-              sh('go test ./...')
-              }
+            steps {
+                withEnv([“PATH+GO=${GOPATH}/bin”]){
+                    // echo ‘Running vetting’
+                    // sh ‘go vet .’
+                    // echo ‘Running linting’
+                    // sh ‘golint .’
+                    echo ‘Running test’
+                    sh ‘cd test && go test -v’
+                }
             }
+            // steps{
+            //   script{
+            //   sh('cd ./test/')
+            //   sh('go test ./...')
+            //   }
+            // }
           }
     }
       // }

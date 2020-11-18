@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'linux'
-        } 
-    }
+    agent any
     // node {
     //         // Install the desired Go version
     //     def root = tool name: 'Go 1.8', type: 'go'

@@ -20,15 +20,15 @@ pipeline {
     //     GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     // }
       stages {
-          stage ('Run tests') {
+          stage('Run tests') {
               steps{
               //   sh script: """
               //       [ "\$(go version)" == 'go version go1.9.3 linux/amd64' ] || (${installGo})
               //   """
-              script{
+              // script{
                 sh 'cd ./test/'
                 sh 'go test ./...'
-                }
+                // }
               }
           }
     }

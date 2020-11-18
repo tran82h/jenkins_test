@@ -25,8 +25,8 @@ pipeline {
                     // sh ‘go vet .’
                     // echo ‘Running linting’
                     // sh ‘golint .’
-                    echo ‘Running test’
-                    sh ‘cd ./test/ && go test -v’
+                    echo 'Running test'
+                    sh 'cd ./test/ && go test -v'
                 }
             }
             // steps{
